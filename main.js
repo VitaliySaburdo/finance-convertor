@@ -6,9 +6,16 @@ const elementGBP = document.querySelector('[data-value="GBP"]');
 
 const input = document.querySelector("#input");
 const result = document.querySelector("#result");
-const select = document.querySelector("#select");
+const select_1 = document.querySelector("#select_1");
+const select_2 = document.querySelector("#select_2");
 
-const rates = {};
+const rates = { UAH: 1 };
+
+for (let key in rates) {
+  const option = document.createElement("option");
+  option.textContent = key;
+  select_1.appendChild(option);
+}
 
 async function fetchData() {
   try {
@@ -29,9 +36,6 @@ async function fetchData() {
 
 fetchData();
 setInterval(fetchData, 100000);
-
-input.oninput = convertValue;
-select.oninput = convertValue;
 
 function convertValue() {
   result.value = (input.value / rates[select.value]).toFixed(2);
