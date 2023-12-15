@@ -17,7 +17,14 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+
     <title>Конвертер валют на JavaScript</title>
+
+    <style>
+      .footer__link {
+        margin: 0 15px;
+      }
+    </style>
   </head>
   <body>
     <div class="container pt-5 pb-5">
@@ -47,18 +54,24 @@
                 <div class="col">
                   <label for="name">Віддаю:</label>
                   <select
-                    id="select_1"
+                    disabled
                     class="form-control"
                     id="exampleFormControlSelect1"
-                  ></select>
+                  >
+                    <option value="UAH" selected>UAH — Гривня</option>
+                  </select>
                 </div>
                 <div class="col">
                   <label for="name">Отримаю:</label>
                   <select
-                    id="select_2"
+                    id="select"
                     class="form-control"
                     id="exampleFormControlSelect1"
-                  ></select>
+                  >
+                    <option value="USD">USD — Доллар США</option>
+                    <option value="EUR">EUR — Євро</option>
+                    <option value="GBP">GPB — Фунт стерлінгів</option>
+                  </select>
                 </div>
               </div>
 
@@ -90,6 +103,12 @@
       <!-- // row -->
     </div>
     <!-- // container -->
+
+    <footer class="footer d-flex justify-content-center">
+      <a class="footer__link" target="_blank" rel="noreferrer noopener" href="#"
+        >My test task</a
+      >
+    </footer>
 
     <script src="main.js"></script>
   </body>
